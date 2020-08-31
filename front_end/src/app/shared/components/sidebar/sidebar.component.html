@@ -1,12 +1,14 @@
 <mat-nav-list>
     <div class="profile-card">
         <div class="header">
-            <h2>Sachin Ak</h2>
-            <h4>Sachin@email.com</h4>
+            <h2>{{getUsername()}}</h2>
+            <h4>{{userDetails.email}}</h4>
         </div>
-        <img src="assets/images/sachin.jpeg" alt="Sachin Ak">
-    </div>
+        <img src="assets/images/Users.png" alt="Sachin Ak" *ngIf="!userDetails.image">
+        <img src="assets/images/{{getImageName()}}" alt="Sachin Ak" *ngIf="userDetails.image">
 
+    </div>
+     
     <mat-divider></mat-divider>
     <h2 matSubheader>Explore</h2>
 

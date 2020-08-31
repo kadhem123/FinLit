@@ -9,12 +9,12 @@
 
         <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
             <ul fxLayout="row" fxLayoutGap="20px">
-                <li>
+                <li *ngIf="!userService.getToken()" >
                     <button mat-icon-button routerLinkActive="active" routerLink="/login">
                         Login
                     </button>
                 </li>
-                <li>
+               <li *ngIf="!userService.getToken()" >
                     <button mat-icon-button  routerLinkActive="active" routerLink="/register">
                         Sign Up
                     </button>
@@ -25,8 +25,11 @@
                     </button>
                     
                     <mat-menu #menu="matMenu">
-                        <button mat-menu-item>
-                            <mat-icon>exit_to_app</mat-icon>
+                        <button mat-menu-item routerLink='/edit/{{userDetails._id}}' >
+                            <mat-icon >build</mat-icon>
+Edit Profile                        </button>
+                        <button mat-menu-item (click)="onLogout()" routerLink='/login' >
+                            <mat-icon >exit_to_app</mat-icon>
                             Sign out
                         </button>
                     </mat-menu>

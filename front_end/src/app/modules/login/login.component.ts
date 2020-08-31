@@ -14,11 +14,7 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser(){
-    this._auth.loginUser(this.loginUserData)
-      .subscribe(
-        res=>alert(res["email"] + " welcome "),
-        err=>alert(err["statusText"] + " user")
-      )
+   
   }
 
 }

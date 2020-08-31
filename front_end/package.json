@@ -25,6 +25,8 @@
     "cors": "^2.8.5",
     "highcharts": "^8.1.2",
     "highcharts-angular": "^2.7.0",
+    "ng2-file-upload": "^1.4.0",
+    "ngx-toastr": "^13.0.0",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
