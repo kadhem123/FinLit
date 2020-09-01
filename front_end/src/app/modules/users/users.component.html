@@ -1,0 +1,21 @@
+<table class="table" style="background-color: antiquewhite;" *ngIf="roleIsAdmin()">
+    <thead >
+      <tr style="background-color:#4156B5;">
+        <th scope="col">Id</th>
+        <th scope="col">Username</th>
+        <th scope="col">Email</th>
+        <th scope="col">Role</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{user._id}}</td>
+        <td>{{getUsername(user.email)}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.role}}</td>
+
+      </tr>
+      
+    </tbody>
+  </table>
+  <h4 *ngIf="!roleIsAdmin()">You are not allowed</h4> 

@@ -20,6 +20,8 @@ let upload = multer({
 });
 
 router.post('/register', ctrlUser.register);
+router.get('/users', ctrlUser.getUsers);
+
 router.post('/authenticate', ctrlUser.authenticate);
 router.get('/userProfile', jwtHelper.verifyJwtToken, ctrlUser.userProfile);
 router.put('/update/:_id', ctrlUser.updateUser)

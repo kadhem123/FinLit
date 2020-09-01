@@ -6,6 +6,8 @@ const { forEach } = require('lodash');
 multer = require('multer')
 bodyParser = require('body-parser');
 const User = mongoose.model('User');
+var unirest = require("unirest");
+
 module.exports.register = (req, res, next) => {
     var user = new User();
     user.email = req.body.email;
@@ -24,6 +26,22 @@ module.exports.register = (req, res, next) => {
 
     });
 }
+module.exports.getUsers = (req, res, next) => {
+    User.find({})
+        .exec(function (err, users) {
+
+            var userMap = [];
+
+            users.forEach(function (user) {
+
+                userMap.push(user);
+            });
+
+            res.send(userMap);
+
+        });
+}
+
 
 module.exports.authenticate = (req, res, next) => {
     // call for passport authentication
@@ -51,7 +69,7 @@ module.exports.userProfile = (req, res, next) => {
             }
             else {
 
-                return res.status(200).json({ status: true, user: _.pick(user, ['_id', 'email','image']) });
+                return res.status(200).json({ status: true, user: _.pick(user, ['role','_id', 'email','image']) });
             }
         }
         );
@@ -94,6 +112,20 @@ module.exports.uploadImage = (req, res) => {
             success: true
         })
     }
-
 }
-
+    const finnhub = require('finnhub');
+ 
+    const api_key = finnhub.ApiClient.instance.authentications['api_key'];
+    api_key.apiKey = "bt78he748v6ppe5nvfsg" // Replace this
+    const finnhubClient = new finnhub.DefaultApi()
+     
+    // Stock candles
+    finnhubClient.stockCandles("AAPL", "D", 1590988249, 1591852249, {}, (error, data, response) => {
+        console.log(data)
+    });
+     
+   
+     
+ 
+     
+ 

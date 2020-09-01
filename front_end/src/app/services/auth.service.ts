@@ -9,7 +9,8 @@ export class AuthService {
   selectedUser: User= {
     email: '',
     password: '',
-    image:''
+    image:'',
+    role:''
   };
   noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
   constructor(private http: HttpClient) { }
@@ -56,6 +57,9 @@ export class AuthService {
   updateUser(user: User, _id: String) {
     return this.http.put('http://localhost:3000/api/update/' + _id, user);
   }
+  getUsers() {
+    return this.http.get<User[]>("http://localhost:3000/api/users")
 
+  }
 
 }

@@ -43,5 +43,7 @@ export class SidebarComponent implements OnInit {
       return splitted;
     }
 
-
+    roleIsAdmin(){
+      return this.userDetails.role=="Admin"
+    }
 }

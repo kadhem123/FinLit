@@ -13,6 +13,7 @@ import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
 import { AuthGuard } from './auth/auth.guard'
 import { EditProfileComponent } from './modules/edit-profile/edit-profile.component';
+import { UsersComponent } from './modules/users/users.component';
 const routes: Routes = [{
   path: '',
   component: DefaultComponent,
@@ -34,6 +35,10 @@ const routes: Routes = [{
   {
     path: 'edit/:_id',
     component: EditProfileComponent
+  },
+  {
+    path: 'users',
+    component: UsersComponent
   }]},
   {
     path: 'signup', component: UserComponent,

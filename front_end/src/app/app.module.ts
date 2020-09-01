@@ -16,13 +16,15 @@ import { FormsModule }   from '@angular/forms';
 import { EditProfileComponent } from './modules/edit-profile/edit-profile.component';
 import { ToastrModule } from 'ngx-toastr';
 import { FileSelectDirective, FileUploader, FileUploadModule } from 'ng2-file-upload';
+import { UsersComponent } from './modules/users/users.component';
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
     UserComponent,
     SignUpComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    UsersComponent
 
   
   ],
