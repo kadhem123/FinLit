@@ -14,6 +14,7 @@ import { SignInComponent } from './user/sign-in/sign-in.component';
 import { AuthGuard } from './auth/auth.guard'
 import { EditProfileComponent } from './modules/edit-profile/edit-profile.component';
 import { UsersComponent } from './modules/users/users.component';
+import { AddArticleComponent } from './modules/add-article/add-article.component';
 const routes: Routes = [{
   path: '',
   component: DefaultComponent,
@@ -39,6 +40,10 @@ const routes: Routes = [{
   {
     path: 'users',
     component: UsersComponent
+  },
+  {
+    path: 'addarticle',
+    component: AddArticleComponent
   }]},
   {
     path: 'signup', component: UserComponent,

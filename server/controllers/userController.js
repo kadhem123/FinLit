@@ -6,6 +6,8 @@ const { forEach } = require('lodash');
 multer = require('multer')
 bodyParser = require('body-parser');
 const User = mongoose.model('User');
+const Article = mongoose.model('Article');
+
 var unirest = require("unirest");
 
 module.exports.register = (req, res, next) => {
@@ -20,6 +22,24 @@ module.exports.register = (req, res, next) => {
         else {
             if (err.code == 11000)
                 res.status(422).send(['Duplicate email adrress found.']);
+            else
+                return next(err);
+        }
+
+    });
+}
+module.exports.addArticle = (req, res, next) => {
+    var article = new Article();
+    article.title = req.body.title;
+    article.category = req.body.category;
+    article.body=req.body.body;
+
+    article.save((err, doc) => {
+        if (!err)
+            res.send(doc);
+        else {
+            if (err.code == 11000)
+                res.status(422).send(['Error.']);
             else
                 return next(err);
         }

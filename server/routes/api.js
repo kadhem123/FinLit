@@ -21,6 +21,7 @@ let upload = multer({
 
 router.post('/register', ctrlUser.register);
 router.get('/users', ctrlUser.getUsers);
+router.post('/addArticle', ctrlUser.addArticle);
 
 router.post('/authenticate', ctrlUser.authenticate);
 router.get('/userProfile', jwtHelper.verifyJwtToken, ctrlUser.userProfile);

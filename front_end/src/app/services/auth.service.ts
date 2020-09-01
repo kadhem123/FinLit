@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http'
 import { User } from '../models/user.model';
+import { Article } from '../models/article.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +13,19 @@ export class AuthService {
     image:'',
     role:''
   };
+  selectedArticle: Article= {
+    title: '',
+    body: '',
+    category:''
+  };
   noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
   constructor(private http: HttpClient) { }
 
   postUser(user: User) {
     return this.http.post("http://localhost:3000/api/register", user, this.noAuthHeader);
+  }
+  postArticle(article:Article){
+    return this.http.post("http://localhost:3000/api/addArticle", article);
   }
 
   login(authCredentials) {

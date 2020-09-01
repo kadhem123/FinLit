@@ -21,7 +21,14 @@
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/stocks">
         <mat-icon>trending_up</mat-icon>
         Stocks</a>
-
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/addarticle" *ngIf="roleIsAdmin()">
+            <mat-icon>note_add</mat-icon>
+            Add Article
+        </a>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/users" *ngIf="roleIsAdmin()">
+            <mat-icon>people</mat-icon>
+            Users
+        </a>
     <mat-divider></mat-divider>
 
     <h2 matSubheader>Help</h2>
@@ -35,11 +42,7 @@
         <mat-icon>contact_phone</mat-icon>
         Leads
     </a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/users" *ngIf="roleIsAdmin()">
-        <mat-icon>users</mat-icon>
-        Users
-    </a>
-
+   
 
 
 </mat-nav-list>

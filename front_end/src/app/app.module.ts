@@ -17,6 +17,7 @@ import { EditProfileComponent } from './modules/edit-profile/edit-profile.compon
 import { ToastrModule } from 'ngx-toastr';
 import { FileSelectDirective, FileUploader, FileUploadModule } from 'ng2-file-upload';
 import { UsersComponent } from './modules/users/users.component';
+import { AddArticleComponent } from './modules/add-article/add-article.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { UsersComponent } from './modules/users/users.component';
     UserComponent,
     SignUpComponent,
     EditProfileComponent,
-    UsersComponent
+    UsersComponent,
+    AddArticleComponent
 
   
   ],
