@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import {MatButtonModule} from '@angular/material/button'; 
+
+import {MatCardModule} from '@angular/material/card'; 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,6 +21,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { FileSelectDirective, FileUploader, FileUploadModule } from 'ng2-file-upload';
 import { UsersComponent } from './modules/users/users.component';
 import { AddArticleComponent } from './modules/add-article/add-article.component';
+import { InvestingComponent } from './modules/investing/investing.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,14 +30,16 @@ import { AddArticleComponent } from './modules/add-article/add-article.component
     SignUpComponent,
     EditProfileComponent,
     UsersComponent,
-    AddArticleComponent
+    AddArticleComponent,
+    InvestingComponent
 
   
   ],
   imports: [
     FormsModule,
-
+    MatCardModule,
     BrowserModule,
+    MatButtonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     DefaultModule,
