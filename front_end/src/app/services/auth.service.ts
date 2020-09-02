@@ -70,5 +70,12 @@ export class AuthService {
     return this.http.get<User[]>("http://localhost:3000/api/users")
 
   }
+  getArticles() {
+    return this.http.get<Article[]>("http://localhost:3000/api/articles")
+
+  }
+  deleteArticle(id:String){
+    return this.http.delete<Article>("http://localhost:3000/api/deleteArticle/"+id)
+  }
 
 }

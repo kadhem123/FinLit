@@ -28,6 +28,33 @@ module.exports.register = (req, res, next) => {
 
     });
 }
+module.exports.deleteArticle=(req,res,next)=>{
+    Article.findByIdAndDelete(
+        req.params._id,
+        function (error, result) {
+            if (error) {
+                throw error;
+            } else {
+                res.status(200).json(result);
+            }
+        }
+    );
+}
+module.exports.getArticles=(req,res,next)=>{
+    Article.find({})
+    .exec(function (err, articles) {
+
+        var articleMap = [];
+
+        articles.forEach(function (article) {
+
+            articleMap.push(article);
+        });
+
+        res.send(articleMap);
+
+    });
+}
 module.exports.addArticle = (req, res, next) => {
     var article = new Article();
     article.title = req.body.title;

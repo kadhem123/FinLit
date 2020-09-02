@@ -22,6 +22,7 @@ import { FileSelectDirective, FileUploader, FileUploadModule } from 'ng2-file-up
 import { UsersComponent } from './modules/users/users.component';
 import { AddArticleComponent } from './modules/add-article/add-article.component';
 import { InvestingComponent } from './modules/investing/investing.component';
+import { ManageArticlesComponent } from './modules/manage-articles/manage-articles.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,8 @@ import { InvestingComponent } from './modules/investing/investing.component';
     EditProfileComponent,
     UsersComponent,
     AddArticleComponent,
-    InvestingComponent
+    InvestingComponent,
+    ManageArticlesComponent
 
   
   ],

@@ -22,6 +22,8 @@ let upload = multer({
 router.post('/register', ctrlUser.register);
 router.get('/users', ctrlUser.getUsers);
 router.post('/addArticle', ctrlUser.addArticle);
+router.delete('/deleteArticle/:_id', ctrlUser.deleteArticle);
+router.get('/articles', ctrlUser.getArticles);
 
 router.post('/authenticate', ctrlUser.authenticate);
 router.get('/userProfile', jwtHelper.verifyJwtToken, ctrlUser.userProfile);

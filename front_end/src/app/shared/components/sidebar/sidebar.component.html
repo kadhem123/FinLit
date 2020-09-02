@@ -29,6 +29,10 @@
             <mat-icon>people</mat-icon>
             Users
         </a>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/articles" *ngIf="roleIsAdmin()">
+            <mat-icon>build</mat-icon>
+            Manage Articles
+        </a>
     <mat-divider></mat-divider>
 
     <h2 matSubheader>Help</h2>
