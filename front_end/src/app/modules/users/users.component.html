@@ -5,6 +5,8 @@
         <th scope="col">Username</th>
         <th scope="col">Email</th>
         <th scope="col">Role</th>
+        <th scope="col">Manage</th>
+
       </tr>
     </thead>
     <tbody>
@@ -13,6 +15,8 @@
         <td>{{getUsername(user.email)}}</td>
         <td>{{user.email}}</td>
         <td>{{user.role}}</td>
+        <td><input type="submit" (click)="deleteUser(user._id)" value="delete"></td>
+
 
       </tr>
       

@@ -40,6 +40,18 @@ module.exports.deleteArticle=(req,res,next)=>{
         }
     );
 }
+module.exports.deleteUser=(req,res,next)=>{
+    User.findByIdAndDelete(
+        req.params._id,
+        function (error, result) {
+            if (error) {
+                throw error;
+            } else {
+                res.status(200).json(result);
+            }
+        }
+    );
+}
 module.exports.getArticles=(req,res,next)=>{
     Article.find({})
     .exec(function (err, articles) {

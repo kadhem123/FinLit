@@ -26,7 +26,6 @@ import {HttpClientModule} from '@angular/common/http'
     DefaultComponent,
     DashboardComponent,
     PostsComponent,
-    StocksComponent,
     ContactsComponent,
     LoginComponent,
     RegisterComponent,

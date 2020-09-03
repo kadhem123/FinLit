@@ -23,6 +23,8 @@ router.post('/register', ctrlUser.register);
 router.get('/users', ctrlUser.getUsers);
 router.post('/addArticle', ctrlUser.addArticle);
 router.delete('/deleteArticle/:_id', ctrlUser.deleteArticle);
+router.delete('/deleteUser/:_id', ctrlUser.deleteUser);
+
 router.get('/articles', ctrlUser.getArticles);
 
 router.post('/authenticate', ctrlUser.authenticate);

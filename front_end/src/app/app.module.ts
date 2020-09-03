@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {DefaultModule} from './layouts/default/default.module';
 import { AuthService } from './services/auth.service';
+
 import { SignInComponent } from './user/sign-in/sign-in.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
@@ -23,6 +24,8 @@ import { UsersComponent } from './modules/users/users.component';
 import { AddArticleComponent } from './modules/add-article/add-article.component';
 import { InvestingComponent } from './modules/investing/investing.component';
 import { ManageArticlesComponent } from './modules/manage-articles/manage-articles.component';
+import { StocksComponent } from './modules/stocks/stocks.component';
+import { MatLabel } from '@angular/material/form-field';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +36,10 @@ import { ManageArticlesComponent } from './modules/manage-articles/manage-articl
     UsersComponent,
     AddArticleComponent,
     InvestingComponent,
-    ManageArticlesComponent
+    ManageArticlesComponent,
+    StocksComponent,
+
+
 
   
   ],

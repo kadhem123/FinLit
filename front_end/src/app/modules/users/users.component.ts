@@ -32,4 +32,11 @@ export class UsersComponent implements OnInit {
   roleIsAdmin(){
     return this.userDetails.role=="Admin"
   }
+  deleteUser(id:String) {
+    this.userService.deleteUser(id).subscribe(data => {
+        alert('Success');
+    });
+    window.location.reload()
+}
+
 }

@@ -77,5 +77,8 @@ export class AuthService {
   deleteArticle(id:String){
     return this.http.delete<Article>("http://localhost:3000/api/deleteArticle/"+id)
   }
+  deleteUser(id:String){
+    return this.http.delete<User>("http://localhost:3000/api/deleteUser/"+id)
+  }
 
 }
