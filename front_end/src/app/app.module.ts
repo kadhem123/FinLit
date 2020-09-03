@@ -26,6 +26,7 @@ import { InvestingComponent } from './modules/investing/investing.component';
 import { ManageArticlesComponent } from './modules/manage-articles/manage-articles.component';
 import { StocksComponent } from './modules/stocks/stocks.component';
 import { MatLabel } from '@angular/material/form-field';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,11 +38,7 @@ import { MatLabel } from '@angular/material/form-field';
     AddArticleComponent,
     InvestingComponent,
     ManageArticlesComponent,
-    StocksComponent,
-
-
-
-  
+    StocksComponent
   ],
   imports: [
     FormsModule,
