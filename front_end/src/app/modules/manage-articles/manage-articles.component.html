@@ -4,6 +4,8 @@
         <th scope="col">Id</th>
         <th scope="col">Title</th>
         <th scope="col">Category</th>
+        <th scope="col">Edit</th>
+
         <th scope="col">Delete</th>
       </tr>
     </thead>
@@ -12,6 +14,8 @@
         <td>{{article._id}}</td>
         <td>{{article.title}}</td>
         <td>{{article.category}}</td>
+        <td><input type="submit"  routerLink="/editArticle/{{article._id}}" value="Edit"></td>
+
         <td><input type="submit" (click)="deleteArticle(article._id)" value="delete"></td>
 
       </tr>

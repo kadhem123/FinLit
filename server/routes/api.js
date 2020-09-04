@@ -20,12 +20,17 @@ let upload = multer({
 });
 
 router.post('/register', ctrlUser.register);
+router.post('/send', ctrlUser.sendMessage);
+
 router.get('/users', ctrlUser.getUsers);
 router.post('/addArticle', ctrlUser.addArticle);
 router.delete('/deleteArticle/:_id', ctrlUser.deleteArticle);
 router.delete('/deleteUser/:_id', ctrlUser.deleteUser);
+router.get('/article/:_id', ctrlUser.articleDetails);
+router.get('/contacts', ctrlUser.getMessages);
 
 router.get('/articles', ctrlUser.getArticles);
+router.put('/updateArticle/:_id', ctrlUser.updateArticle)
 
 router.post('/authenticate', ctrlUser.authenticate);
 router.get('/userProfile', jwtHelper.verifyJwtToken, ctrlUser.userProfile);

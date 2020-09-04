@@ -1,58 +1,44 @@
-<div fxLayoutAlign=" flex-center">
 
-<section class="hero is-primary is-bold">
-    <div class="hero-body">
-    <div class="container">
-
-      <h1 class="title">Contact Us!</h1>
-
+  <form #AddContactForm="ngForm" style="text-align:center;" (ngSubmit)="AddContactForm.valid && onSubmit(AddContactForm)">
+  
+   <br>       
+   <label for="name"  style="text-align:center;">Name</label>
+  <br>
+    <input type="text" #name="ngModel" [(ngModel)]="userService.selectedContact.name" name="name" placeholder="Name"
+      required >
+    <div *ngIf="AddContactForm.submitted && name.errors">
+      <label *ngIf="name.errors.required" class="validation-message">This field is required.</label>
+      <label *ngIf="name.errors.pattern" class="validation-message">Invalid name .</label>
     </div>
-    </div>
-</section>
-</div> 
+    <br>
+    <label for="email">Email</label>
 
-<div fxLayoutAlign="flex-center">
-<section class = "section">
-    <div class="container">
+    <input type="text" #email="ngModel" [(ngModel)]="userService.selectedContact.email" name="email" placeholder="Email"
+    required >
+  <div *ngIf="AddContactForm.submitted && email.errors">
+    <label *ngIf="email.errors.required" class="validation-message">This field is required.</label>
+  </div>
+  
+    <br>
+    <label for="query">Phone Number</label>
+    <br>
+        <input type="text"  #body="ngModel" [(ngModel)]="userService.selectedContact.phoneNumber" name="phoneNumber"
+          placeholder="Phone Number" >
+    <label for="query">Query</label>
+<br>
+    <input type="text" style="height: 100px;" #body="ngModel" [(ngModel)]="userService.selectedContact.query" name="query"
+      placeholder="Query"required>
+ 
+   
+  
+    <input type="submit" value="Send Message">
+  </form>
 
-        <form>
-
-            <!-- name -->
-            <div class="field">
-                <mat-form-field appearance ="outline">
-                    <mat-label>Name</mat-label>
-                    <input matInput name = "name" >
-                </mat-form-field>
-            </div>
-          
-            <!-- email -->
-            <div class="field">
-                <mat-form-field appearance ="outline">
-                    <mat-label>Email</mat-label>
-                    <input matInput name="email" >
-                </mat-form-field>
-            </div>
-          
-            <!-- message -->
-            <div class="field">
-                <mat-form-field appearance ="outline">
-                    <mat-label>Phone Number</mat-label>
-                    <input matInput name="phone">
-                </mat-form-field>
-            </div>
-
-            <div class ="field">  
-                <mat-form-field  appearance ="outline" floatlabel = "auto">
-                    <mat-label>Your Query</mat-label>
-                    <textarea matInput placeholer = "Ex. What does this website provide to users?.."> </textarea>
-                </mat-form-field>
-            </div>
-          
-            <button mat-raised-button color = "primary">Submit</button>
-          
-          </form>
-
-    </div>
-</section>
-
-</div>
+  <!-- Success message -->
+  <div class="success" *ngIf="showSuccessMessage">
+    Saved Successfully
+  </div>
+  <div class="alert" *ngIf="serverErrorMessages">
+    {{serverErrorMessages}}
+  </div>
+  

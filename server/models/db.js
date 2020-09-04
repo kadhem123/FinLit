@@ -7,4 +7,5 @@ mongoose.connect(process.env.MONGODB_URI, (err) => {
 
 require('./user');
 require('./article');
+require('./contact');
 

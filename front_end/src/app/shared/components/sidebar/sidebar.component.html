@@ -33,6 +33,10 @@
             <mat-icon>build</mat-icon>
             Manage Articles
         </a>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/Messages" *ngIf="roleIsAdmin()">
+            <mat-icon>message</mat-icon>
+            Manage Messages
+        </a>
     <mat-divider></mat-divider>
 
     <h2 matSubheader>Help</h2>

@@ -16,10 +16,12 @@ import { EditProfileComponent } from './modules/edit-profile/edit-profile.compon
 import { UsersComponent } from './modules/users/users.component';
 import { AddArticleComponent } from './modules/add-article/add-article.component';
 import { InvestingComponent } from './modules/investing/investing.component';
+import { ManageContactsComponent } from './modules/manage-contacts/manage-contacts.component'
 
 import { ManageArticlesComponent } from './modules/manage-articles/manage-articles.component';
 import { TickerInfoComponent } from './modules/stocks/ticker-info/ticker-info.component';
 import { TradingComponent } from './modules/trading/trading.component';
+import { EditArticleComponent } from './modules/edit-article/edit-article.component';
 const routes: Routes = [{
   path: '',
   component: DefaultComponent,
@@ -43,6 +45,10 @@ const routes: Routes = [{
     component: EditProfileComponent
   },
   {
+    path: 'editArticle/:_id',
+    component: EditArticleComponent
+  },
+  {
     path: 'users',
     component: UsersComponent
   },
@@ -54,6 +60,10 @@ const routes: Routes = [{
   {
     path: 'articles',
     component: ManageArticlesComponent
+  },
+  {
+    path: 'Messages',
+    component: ManageContactsComponent
   },
   {
     path: 'investing',

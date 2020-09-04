@@ -27,6 +27,8 @@ import { ManageArticlesComponent } from './modules/manage-articles/manage-articl
 import { StocksComponent } from './modules/stocks/stocks.component';
 import { MatLabel } from '@angular/material/form-field';
 import { TradingComponent } from './modules/trading/trading.component';
+import { EditArticleComponent } from './modules/edit-article/edit-article.component';
+import { ManageContactsComponent } from './modules/manage-contacts/manage-contacts.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { TradingComponent } from './modules/trading/trading.component';
     InvestingComponent,
     ManageArticlesComponent,
     StocksComponent,
-    TradingComponent
+    TradingComponent,
+    EditArticleComponent,
+    ManageContactsComponent
   ],
   imports: [
     FormsModule,

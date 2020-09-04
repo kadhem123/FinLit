@@ -7,6 +7,7 @@ multer = require('multer')
 bodyParser = require('body-parser');
 const User = mongoose.model('User');
 const Article = mongoose.model('Article');
+const Contact = mongoose.model('Contact');
 
 var unirest = require("unirest");
 
@@ -17,6 +18,28 @@ module.exports.register = (req, res, next) => {
     user.image=req.body.image;
 
     user.save((err, doc) => {
+        if (!err)
+            res.send(doc);
+        else {
+            if (err.code == 11000)
+                res.status(422).send(['Duplicate email adrress found.']);
+            else
+                return next(err);
+        }
+
+    });
+}
+module.exports.sendMessage = (req, res, next) => {
+    var contact = new Contact();
+    contact.name = req.body.name;
+    contact.phoneNumber = req.body.phoneNumber;
+
+    contact.email = req.body.email;
+    contact.query = req.body.query;
+
+  
+
+    contact.save((err, doc) => {
         if (!err)
             res.send(doc);
         else {
@@ -64,6 +87,21 @@ module.exports.getArticles=(req,res,next)=>{
         });
 
         res.send(articleMap);
+
+    });
+}
+module.exports.getMessages=(req,res,next)=>{
+    Contact.find({})
+    .exec(function (err, contacts) {
+
+        var contactMap = [];
+
+        contacts.forEach(function (contact) {
+
+            contactMap.push(contact);
+        });
+
+        res.send(contactMap);
 
     });
 }
@@ -143,6 +181,29 @@ module.exports.updateUser = (req, res, next) => {
         if (doc) return res.send(doc);
     })
 }
+module.exports.updateArticle = (req, res, next) => {
+    const id = req.params._id;
+    const newArticleData = req.body;
+   
+    Article.findByIdAndUpdate(id, { $set: newArticleData }, (err, doc) => {
+        if (err) return res.send(err.message)
+        if (doc) return res.send(doc);
+    })
+}
+module.exports.articleDetails = (req, res, next) => {
+    Article.findOne({ _id: req.params._id })
+        .exec(function (err, article) {
+            if (!article) {
+
+                return res.status(404).json({ status: false, message: 'User record not found.', err: err, id: req._id });
+            }
+            else {
+                return res.status(200).json({ status: true, article: _.pick(article, ['_id', 'title', 'body', 'category']) });
+            }
+        }
+        );
+}
+
 
 const PATH = './';
 
