@@ -19,6 +19,7 @@ import { InvestingComponent } from './modules/investing/investing.component';
 
 import { ManageArticlesComponent } from './modules/manage-articles/manage-articles.component';
 import { TickerInfoComponent } from './modules/stocks/ticker-info/ticker-info.component';
+import { TradingComponent } from './modules/trading/trading.component';
 const routes: Routes = [{
   path: '',
   component: DefaultComponent,
@@ -57,6 +58,10 @@ const routes: Routes = [{
   {
     path: 'investing',
     component: InvestingComponent
+  },
+  {
+    path: 'trading',
+    component: TradingComponent
   },
 
   {

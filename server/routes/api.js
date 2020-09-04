@@ -6,7 +6,7 @@ const jwtHelper = require('../config/jwtHelper');
 router.get('/', (req, res, next) => {
   res.send("header");
 });
-const PATH = '../front_end/src/assets/images/articles';
+const PATH = '../front_end/src/assets/images';
 let storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, PATH);

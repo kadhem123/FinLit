@@ -3,12 +3,13 @@ import { AuthService } from 'src/app/services/auth.service';
 import { Article } from 'src/app/models/article.model';
 
 @Component({
-  selector: 'app-investing',
-  templateUrl: './investing.component.html',
-  styleUrls: ['./investing.component.scss']
+  selector: 'app-trading',
+  templateUrl: './trading.component.html',
+  styleUrls: ['./trading.component.scss']
 })
-export class InvestingComponent implements OnInit {
+export class TradingComponent implements OnInit {
 
+ 
   constructor(private userService:AuthService) { }
   articles:Article[]
   ngOnInit(): void {
@@ -22,3 +23,4 @@ export class InvestingComponent implements OnInit {
 
 
 }
+

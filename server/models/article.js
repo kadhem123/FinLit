@@ -18,6 +18,7 @@ var articleSchema = new mongoose.Schema({
     },
     image: {
         type: String,
+        default:"in.png"
     },
   
     saltSecret: String
