@@ -12,7 +12,7 @@
     </div>
     <br>
     <label for="email">Email</label>
-
+<br>
     <input type="text" #email="ngModel" [(ngModel)]="userService.selectedContact.email" name="email" placeholder="Email"
     required >
   <div *ngIf="AddContactForm.submitted && email.errors">
@@ -24,6 +24,7 @@
     <br>
         <input type="text"  #body="ngModel" [(ngModel)]="userService.selectedContact.phoneNumber" name="phoneNumber"
           placeholder="Phone Number" >
+          <br>
     <label for="query">Query</label>
 <br>
     <input type="text" style="height: 100px;" #body="ngModel" [(ngModel)]="userService.selectedContact.query" name="query"
