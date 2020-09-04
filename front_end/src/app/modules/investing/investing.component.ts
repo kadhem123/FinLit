@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
+import { Article } from 'src/app/models/article.model';
 
 @Component({
   selector: 'app-investing',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InvestingComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private userService:AuthService) { }
+  articles:Article[]
   ngOnInit(): void {
+    this.userService.getArticles()
+      .subscribe(articles => this.articles = articles)
+      
   }
 
 }

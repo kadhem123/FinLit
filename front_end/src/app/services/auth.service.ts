@@ -16,7 +16,8 @@ export class AuthService {
   selectedArticle: Article= {
     title: '',
     body: '',
-    category:''
+    category:'',
+    image:''
   };
   noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
   constructor(private http: HttpClient) { }

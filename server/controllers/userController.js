@@ -70,6 +70,7 @@ module.exports.getArticles=(req,res,next)=>{
 module.exports.addArticle = (req, res, next) => {
     var article = new Article();
     article.title = req.body.title;
+    article.image=req.body.image;
     article.category = req.body.category;
     article.body=req.body.body;
 

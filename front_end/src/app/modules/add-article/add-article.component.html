@@ -1,6 +1,11 @@
 
   <form #AddArticleForm="ngForm" *ngIf="roleIsAdmin()" style="text-align:center;" (ngSubmit)="AddArticleForm.valid && onSubmit(AddArticleForm)">
-  <label for="title"  style="text-align:center;">Title</label>
+    <h4>Select an Image</h4>
+    <input type="file" name="image"#image="ngModel" [(ngModel)]="userService.selectedArticle.image"
+          ng2FileSelect [uploader]="uploader" accept="image/x-png,image/gif,image/jpeg" />
+   
+   <br>       
+   <label for="title"  style="text-align:center;">Title</label>
   <br>
     <input type="text" #title="ngModel" [(ngModel)]="userService.selectedArticle.title" name="title" placeholder="Title"
       required [ngClass]="{'invalid-textbox' :AddArticleForm.submitted && !title.valid }">
