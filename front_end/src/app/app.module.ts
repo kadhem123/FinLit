@@ -29,7 +29,8 @@ import { MatLabel } from '@angular/material/form-field';
 import { TradingComponent } from './modules/trading/trading.component';
 import { EditArticleComponent } from './modules/edit-article/edit-article.component';
 import { ManageContactsComponent } from './modules/manage-contacts/manage-contacts.component';
-import { NgSearchPipe } from 'ng-search-pipe'; // import here
+import { NgSearchPipe } from 'ng-search-pipe';
+import { ArticleDetailsComponent } from './modules/article-details/article-details.component'; // import here
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,8 @@ import { NgSearchPipe } from 'ng-search-pipe'; // import here
     StocksComponent,
     TradingComponent,
     EditArticleComponent,
-    ManageContactsComponent
+    ManageContactsComponent,
+    ArticleDetailsComponent
   ],
   imports: [
     FormsModule,

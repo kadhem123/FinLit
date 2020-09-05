@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http'
 import { User } from '../models/user.model';
 import { Article } from '../models/article.model';
 import { Contact } from '../models/contact.model';
+import { Comment } from '../models/comment.model';
 
 
 @Injectable({
@@ -30,6 +31,10 @@ export class AuthService {
     phoneNumber:'',
     query:''
   };
+  selectComment:Comment={
+    username:'',
+    body:''
+  }
   noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
   constructor(private http: HttpClient) { }
 
@@ -107,5 +112,10 @@ export class AuthService {
   deleteUser(id:String){
     return this.http.delete<User>("http://localhost:3000/api/deleteUser/"+id)
   }
+  addComment(comment:Comment,id:string){
+    return this.http.post("http://localhost:3000/api/addComment/"+id,comment);
+
+  }
+  
 
 }

@@ -7,6 +7,8 @@ multer = require('multer')
 bodyParser = require('body-parser');
 const User = mongoose.model('User');
 const Article = mongoose.model('Article');
+const Comment = mongoose.model('Comment');
+
 const Contact = mongoose.model('Contact');
 
 var unirest = require("unirest");
@@ -186,6 +188,36 @@ module.exports.updateUser = (req, res, next) => {
         if (doc) return res.send(doc);
     })
 }
+module.exports.addComment = (req, res, next) => {
+    var comment = new Comment()
+    comment.username = req.body.username
+    comment.body = req.body.body
+    comment.save((err, doc) => {
+        if (!err) {
+            Article.findOne({ _id: req.params._id },
+                (err, article) => {
+                    if (!article) {
+
+                    }
+                    else {
+
+                        Article.findByIdAndUpdate(req.params._id, { $push: { comments: comment } }, (err, doc) => {
+                            if (err) return res.send(err.message)
+                            if (doc) return res.send(doc);
+                        })
+                    }
+                }
+            );
+        }
+        else {
+
+            return next(err);
+        }
+
+    });
+
+}
+
 module.exports.updateArticle = (req, res, next) => {
     const id = req.params._id;
     const newArticleData = req.body;
@@ -196,14 +228,14 @@ module.exports.updateArticle = (req, res, next) => {
     })
 }
 module.exports.articleDetails = (req, res, next) => {
-    Article.findOne({ _id: req.params._id })
+    Article.findOne({ _id: req.params._id }).populate('comments')
         .exec(function (err, article) {
             if (!article) {
 
                 return res.status(404).json({ status: false, message: 'User record not found.', err: err, id: req._id });
             }
             else {
-                return res.status(200).json({ status: true, article: _.pick(article, ['_id', 'title', 'body', 'category']) });
+                return res.status(200).json({ status: true, article: _.pick(article, ['comments','_id', 'title', 'body', 'category']) });
             }
         }
         );

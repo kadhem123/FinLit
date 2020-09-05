@@ -22,6 +22,7 @@ import { ManageArticlesComponent } from './modules/manage-articles/manage-articl
 import { TickerInfoComponent } from './modules/stocks/ticker-info/ticker-info.component';
 import { TradingComponent } from './modules/trading/trading.component';
 import { EditArticleComponent } from './modules/edit-article/edit-article.component';
+import { ArticleDetailsComponent } from './modules/article-details/article-details.component';
 const routes: Routes = [{
   path: '',
   component: DefaultComponent,
@@ -64,6 +65,10 @@ const routes: Routes = [{
   {
     path: 'Messages',
     component: ManageContactsComponent
+  },
+  {
+    path: 'article-details/:_id',
+    component: ArticleDetailsComponent
   },
   {
     path: 'investing',

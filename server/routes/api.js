@@ -28,6 +28,7 @@ router.delete('/deleteArticle/:_id', ctrlUser.deleteArticle);
 router.delete('/deleteUser/:_id', ctrlUser.deleteUser);
 router.get('/article/:_id', ctrlUser.articleDetails);
 router.get('/contacts', ctrlUser.getMessages);
+router.post('/addComment/:_id', ctrlUser.addComment);
 
 router.get('/articles', ctrlUser.getArticles);
 router.put('/updateArticle/:_id', ctrlUser.updateArticle)
