@@ -8,7 +8,7 @@ import { User } from 'src/app/models/user.model';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
-
+  searchText;
   constructor(private userService:AuthService) { }
   users:User[]
   userDetails;

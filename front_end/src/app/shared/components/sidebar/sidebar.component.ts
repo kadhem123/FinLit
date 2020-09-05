@@ -39,11 +39,16 @@ export class SidebarComponent implements OnInit {
   }
 
     getUsername(){
+      if(this.userDetails){
       var splitted = this.userDetails.email.split("@")[0];
-      return splitted;
+      return splitted;}
     }
 
-    roleIsAdmin(){
-      return this.userDetails.role=="Admin"
+    roleIsAdmin(){if(this.userDetails.role){
+      return this.userDetails.role=="Admin"}
+    }
+    roleIsAnalyst(){
+      if(this.userDetails.role){
+      return this.userDetails.role=="Financial Analyst"}
     }
 }

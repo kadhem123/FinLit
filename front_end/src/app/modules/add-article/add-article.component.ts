@@ -43,8 +43,10 @@ export class AddArticleComponent implements OnInit {
     this.userService.postArticle(form.value).subscribe(
       res => {
         this.showSuccessMessage = true;
-        setTimeout(() => this.showSuccessMessage = false, 4000);
+        setTimeout(() => this.showSuccessMessage = true, 4000);
         form.resetForm();
+        
+        this.router.navigate(['/posts']);
 
 
       },
@@ -62,5 +64,8 @@ export class AddArticleComponent implements OnInit {
   }
   roleIsAdmin(){
     return this.userDetails.role=="Admin"
+  }
+  roleIsAnalyst(){
+    return this.userDetails.role=="Financial Analyst"
   }
 }

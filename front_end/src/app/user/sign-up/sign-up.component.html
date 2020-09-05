@@ -1,3 +1,5 @@
+<h2 style="font-size:medium" class="Inactive undelineHover" routerLink="/login" routerLinkActive="active">Sign In</h2>
+&nbsp;<h2 style="font-size:medium" class="Inactive undelineHover" routerLink="/signup" routerLinkActive="active"> Sign Up</h2>
 <div>
     <img src="../../../assets/images/Users.png" alt="User Icon" id="icon">
   </div>
@@ -9,6 +11,14 @@
       <label *ngIf="email.errors.required" class="validation-message">This field is required.</label>
       <label *ngIf="email.errors.pattern" class="validation-message">Invalid email address.</label>
     </div>
+    <br>
+    <select class="form-control" style="width:80%;margin-left: 47px;background-color: #f6f6f6;" id="exampleFormControlSelect1" #role="ngModel" [(ngModel)]="userService.selectedUser.role"
+    name="role" placeholder="Role" >
+    <option value="Financial Analyst">Financial Analyst</option>
+    <option value="User">User</option>
+
+    </select>
+
     <input type="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" name="password"
       placeholder="Password" minlength="4" required
       [ngClass]="{'invalid-textbox' :signUpForm.submitted && !password.valid }">

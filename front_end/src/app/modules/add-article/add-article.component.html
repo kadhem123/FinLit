@@ -1,5 +1,6 @@
-
-  <form #AddArticleForm="ngForm" *ngIf="roleIsAdmin()" style="text-align:center;" (ngSubmit)="AddArticleForm.valid && onSubmit(AddArticleForm)">
+<div *ngIf="userDetails">
+  <form #AddArticleForm="ngForm" *ngIf="roleIsAdmin()||roleIsAnalyst" style="text-align:center;" (ngSubmit)="AddArticleForm.valid && onSubmit(AddArticleForm)">
+    <input type="hidden" [value]="userDetails.role"  #role="ngModel" name="role" [(ngModel)]="userDetails.role">
     <h4>Select an Image</h4>
     <input type="file" name="image"#image="ngModel" [(ngModel)]="userService.selectedArticle.image"
           ng2FileSelect [uploader]="uploader" accept="image/x-png,image/gif,image/jpeg" />
@@ -44,4 +45,4 @@
   <div class="alert" *ngIf="serverErrorMessages">
     {{serverErrorMessages}}
   </div>
-  
+</div>

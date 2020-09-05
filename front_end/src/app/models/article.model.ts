@@ -3,5 +3,7 @@ export class Article {
     category: string;
     body:string;
     image:string;
+    role:string;
+
 
 }

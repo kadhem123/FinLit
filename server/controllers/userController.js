@@ -16,6 +16,8 @@ module.exports.register = (req, res, next) => {
     user.email = req.body.email;
     user.password = req.body.password;
     user.image=req.body.image;
+    user.role=req.body.role;
+
 
     user.save((err, doc) => {
         if (!err)
@@ -111,6 +113,8 @@ module.exports.addArticle = (req, res, next) => {
     article.image=req.body.image;
     article.category = req.body.category;
     article.body=req.body.body;
+    article.role=req.body.role;
+
 
     article.save((err, doc) => {
         if (!err)

@@ -16,6 +16,9 @@ var articleSchema = new mongoose.Schema({
         type: String,
         required: 'Body can\'t be empty',
     },
+    role: {
+        type: String
+    },
     image: {
         type: String,
         default:"in.png"

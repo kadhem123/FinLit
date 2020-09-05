@@ -29,7 +29,7 @@ import { MatLabel } from '@angular/material/form-field';
 import { TradingComponent } from './modules/trading/trading.component';
 import { EditArticleComponent } from './modules/edit-article/edit-article.component';
 import { ManageContactsComponent } from './modules/manage-contacts/manage-contacts.component';
-
+import { NgSearchPipe } from 'ng-search-pipe'; // import here
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,6 +56,7 @@ import { ManageContactsComponent } from './modules/manage-contacts/manage-contac
     DefaultModule,
     ToastrModule.forRoot(), // ToastrModule added,
     FileUploadModule,
+    NgSearchPipe
 
  
   ],

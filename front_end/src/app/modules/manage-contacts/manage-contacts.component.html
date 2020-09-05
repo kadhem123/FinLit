@@ -1,3 +1,4 @@
+<div *ngIf="userDetails">
 <table class="table" style="background-color: antiquewhite;" *ngIf="roleIsAdmin()">
     <thead >
       <tr style="background-color:#4156B5;">
@@ -23,3 +24,4 @@
     </tbody>
   </table>
   <h4 *ngIf="!roleIsAdmin()">You are not allowed</h4> 
+</div>
