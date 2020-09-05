@@ -20,7 +20,9 @@ export class AuthService {
     body: '',
     category:'',
     image:'',
-    role:''
+    role:'',
+    id:''
+
   };
   selectedContact: Contact= {
     name: '',

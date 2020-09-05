@@ -114,6 +114,7 @@ module.exports.addArticle = (req, res, next) => {
     article.category = req.body.category;
     article.body=req.body.body;
     article.role=req.body.role;
+    article.id=req.body.id;
 
 
     article.save((err, doc) => {

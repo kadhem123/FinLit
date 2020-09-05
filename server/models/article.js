@@ -2,7 +2,9 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
 var articleSchema = new mongoose.Schema({
-   
+    id:{
+    type:String
+    },
     title: {
         type: String,
         required: 'Body can\'t be empty',

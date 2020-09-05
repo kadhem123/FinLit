@@ -4,6 +4,7 @@ export class Article {
     body:string;
     image:string;
     role:string;
+    id:string;
 
 
 }

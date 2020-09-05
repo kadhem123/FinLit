@@ -40,5 +40,7 @@ export class ManageArticlesComponent implements OnInit {
     });
     window.location.reload()
 }
-
+roleIsAnalyst(){
+  return this.userDetails.role=="Financial Analyst"
+}
 }
