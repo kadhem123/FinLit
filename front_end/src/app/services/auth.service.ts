@@ -120,6 +120,9 @@ export class AuthService {
   deleteUser(id:String){
     return this.http.delete<User>("http://localhost:3000/api/deleteUser/"+id)
   }
+  deleteComment(id:String){
+    return this.http.delete<Comment>("http://localhost:3000/api/deleteComment/"+id)
+  }
   addComment(comment:Comment,id:string){
     return this.http.post("http://localhost:3000/api/addComment/"+id,comment);
 

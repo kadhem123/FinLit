@@ -58,4 +58,10 @@ window.location.reload()
   getUsername(msg:String){
     return msg.split('@')[0];
   }
+  deleteComment(id:String) {
+    this.userService.deleteComment(id).subscribe(data => {
+        alert('Comment Deleted');
+    });
+    window.location.reload()
+}
 }
