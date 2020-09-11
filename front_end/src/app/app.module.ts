@@ -32,6 +32,8 @@ import { ManageContactsComponent } from './modules/manage-contacts/manage-contac
 import { NgSearchPipe } from 'ng-search-pipe';
 import { ArticleDetailsComponent } from './modules/article-details/article-details.component';
 import { EditCommentComponent } from './modules/article-details/edit-comment/edit-comment.component'; // import here
+import { ValidateEqualModule } from 'ng-validate-equal';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +62,8 @@ import { EditCommentComponent } from './modules/article-details/edit-comment/edi
     DefaultModule,
     ToastrModule.forRoot(), // ToastrModule added,
     FileUploadModule,
-    NgSearchPipe
+    NgSearchPipe,
+    ValidateEqualModule
 
  
   ],

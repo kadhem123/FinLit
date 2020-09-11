@@ -1,5 +1,5 @@
-
-  <form style="text-align: center;" #editCommentForm="ngForm" (ngSubmit)="editCommentForm.valid && onSubmit(editCommentForm)">
+<div *ngIf="userDetails && commentDetails">
+  <form style="text-align: center;" #editCommentForm="ngForm" (ngSubmit)="editCommentForm.valid && onSubmit(editCommentForm)" *ngIf="userDetails.email===comment.username">
 
       
     <h4>Body</h4>
@@ -11,4 +11,4 @@
   
     <input type="submit" value="Edit">
   </form>
-  
+</div>
