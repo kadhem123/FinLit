@@ -1,4 +1,5 @@
-<div style="text-align: center;">
+<div *ngIf="userDetails && articleDetails">
+<div style="text-align: center;" >
     <img style="width:50%" src="assets/images/in.jpg" width="100%" alt="Sachin Ak" *ngIf="!articleDetails.image">
 
     <img  style="width:50%"  *ngIf="articleDetails.image" src={{getImageName(articleDetails.image)}} class="card-img-top" alt="...">            
@@ -32,4 +33,4 @@
     
 
 
-    
+</div>
