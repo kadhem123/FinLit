@@ -30,7 +30,8 @@ import { TradingComponent } from './modules/trading/trading.component';
 import { EditArticleComponent } from './modules/edit-article/edit-article.component';
 import { ManageContactsComponent } from './modules/manage-contacts/manage-contacts.component';
 import { NgSearchPipe } from 'ng-search-pipe';
-import { ArticleDetailsComponent } from './modules/article-details/article-details.component'; // import here
+import { ArticleDetailsComponent } from './modules/article-details/article-details.component';
+import { EditCommentComponent } from './modules/article-details/edit-comment/edit-comment.component'; // import here
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +47,8 @@ import { ArticleDetailsComponent } from './modules/article-details/article-detai
     TradingComponent,
     EditArticleComponent,
     ManageContactsComponent,
-    ArticleDetailsComponent
+    ArticleDetailsComponent,
+    EditCommentComponent
   ],
   imports: [
     FormsModule,

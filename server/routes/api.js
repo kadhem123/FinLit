@@ -29,9 +29,11 @@ router.delete('/deleteUser/:_id', ctrlUser.deleteUser);
 router.get('/article/:_id', ctrlUser.articleDetails);
 router.get('/contacts', ctrlUser.getMessages);
 router.post('/addComment/:_id', ctrlUser.addComment);
+router.get('/comment/:_id', ctrlUser.commentDetails);
 
 router.get('/articles', ctrlUser.getArticles);
 router.put('/updateArticle/:_id', ctrlUser.updateArticle)
+router.put('/updateComment/:_id', ctrlUser.updateComment)
 
 router.post('/authenticate', ctrlUser.authenticate);
 router.get('/userProfile', jwtHelper.verifyJwtToken, ctrlUser.userProfile);

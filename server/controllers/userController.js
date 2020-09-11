@@ -218,6 +218,15 @@ module.exports.addComment = (req, res, next) => {
 
 }
 
+module.exports.updateComment = (req, res, next) => {
+    const id = req.params._id;
+    const newCommentData = req.body;
+   
+    Comment.findByIdAndUpdate(id, { $set: newCommentData }, (err, doc) => {
+        if (err) return res.send(err.message)
+        if (doc) return res.send(doc);
+    })
+}
 module.exports.updateArticle = (req, res, next) => {
     const id = req.params._id;
     const newArticleData = req.body;
@@ -236,6 +245,19 @@ module.exports.articleDetails = (req, res, next) => {
             }
             else {
                 return res.status(200).json({ status: true, article: _.pick(article, ['comments','_id', 'title', 'body', 'category']) });
+            }
+        }
+        );
+}
+module.exports.commentDetails = (req, res, next) => {
+    Comment.findOne({ _id: req.params._id })
+        .exec(function (err, comment) {
+            if (!comment) {
+
+                return res.status(404).json({ status: false, message: 'User record not found.', err: err, id: req._id });
+            }
+            else {
+                return res.status(200).json({ status: true, comment: _.pick(comment, ['body','username', '_id']) });
             }
         }
         );

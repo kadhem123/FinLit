@@ -23,6 +23,7 @@ import { TickerInfoComponent } from './modules/stocks/ticker-info/ticker-info.co
 import { TradingComponent } from './modules/trading/trading.component';
 import { EditArticleComponent } from './modules/edit-article/edit-article.component';
 import { ArticleDetailsComponent } from './modules/article-details/article-details.component';
+import { EditCommentComponent } from './modules/article-details/edit-comment/edit-comment.component';
 const routes: Routes = [{
   path: '',
   component: DefaultComponent,
@@ -69,6 +70,9 @@ const routes: Routes = [{
   {
     path: 'article-details/:_id',
     component: ArticleDetailsComponent
+    ,  children: [{ path: 'edit-comment/:_id',
+    component: EditCommentComponent
+    }]
   },
   {
     path: 'investing',
