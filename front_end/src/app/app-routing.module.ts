@@ -24,6 +24,9 @@ import { TradingComponent } from './modules/trading/trading.component';
 import { EditArticleComponent } from './modules/edit-article/edit-article.component';
 import { ArticleDetailsComponent } from './modules/article-details/article-details.component';
 import { EditCommentComponent } from './modules/article-details/edit-comment/edit-comment.component';
+import { AnalystsComponent } from './modules/analysts/analysts.component';
+import { MessageComponent } from './modules/message/message.component';
+import { AnalystMessagesComponent } from './modules/analyst-messages/analyst-messages.component';
 const routes: Routes = [{
   path: '',
   component: DefaultComponent,
@@ -68,6 +71,10 @@ const routes: Routes = [{
     component: ManageContactsComponent
   },
   {
+    path: 'mymessages',
+    component: AnalystMessagesComponent
+  },
+  {
     path: 'article-details/:_id',
     component: ArticleDetailsComponent
     ,  children: [{ path: 'edit-comment/:_id',
@@ -81,6 +88,14 @@ const routes: Routes = [{
   {
     path: 'trading',
     component: TradingComponent
+  },
+  {
+    path: 'message/:_id',
+    component: MessageComponent
+  },
+  {
+    path: 'Analysts',
+    component: AnalystsComponent
   },
 
   {
