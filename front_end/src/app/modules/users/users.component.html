@@ -14,7 +14,7 @@
     <tbody>
       <tr *ngFor="let user of users | ngSearchPipe:searchText">
         <td>{{user._id}}</td>
-        <td>{{getUsername(user.email)}}</td>
+        <td>{{user.username}}</td>
         <td>{{user.email}}</td>
         <td>{{user.role}}</td>
         <td><input type="submit" (click)="deleteUser(user._id)" value="delete"></td>
