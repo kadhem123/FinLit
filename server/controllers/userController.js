@@ -96,6 +96,18 @@ module.exports.deleteArticle=(req,res,next)=>{
         }
     );
 }
+module.exports.deleteMessage=(req,res,next)=>{
+    Message.findByIdAndDelete(
+        req.params._id,
+        function (error, result) {
+            if (error) {
+                throw error;
+            } else {
+                res.status(200).json(result);
+            }
+        }
+    );
+}
 module.exports.deleteUser=(req,res,next)=>{
     User.findByIdAndDelete(
         req.params._id,

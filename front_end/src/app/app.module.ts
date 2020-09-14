@@ -36,6 +36,7 @@ import { ValidateEqualModule } from 'ng-validate-equal';
 import { AnalystsComponent } from './modules/analysts/analysts.component';
 import { MessageComponent } from './modules/message/message.component';
 import { AnalystMessagesComponent } from './modules/analyst-messages/analyst-messages.component';
+import { LandingComponent } from './landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { AnalystMessagesComponent } from './modules/analyst-messages/analyst-mes
     EditCommentComponent,
     AnalystsComponent,
     MessageComponent,
-    AnalystMessagesComponent
+    AnalystMessagesComponent,
+    LandingComponent
   ],
   imports: [
     FormsModule,

@@ -18,6 +18,7 @@ let storage = multer.diskStorage({
 let upload = multer({
   storage: storage
 });
+router.delete('/deleteMessage/:_id', ctrlUser.deleteMessage);
 
 router.post('/register', ctrlUser.register);
 router.post('/send', ctrlUser.sendMessage);

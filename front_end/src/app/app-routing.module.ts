@@ -27,15 +27,16 @@ import { EditCommentComponent } from './modules/article-details/edit-comment/edi
 import { AnalystsComponent } from './modules/analysts/analysts.component';
 import { MessageComponent } from './modules/message/message.component';
 import { AnalystMessagesComponent } from './modules/analyst-messages/analyst-messages.component';
+import { LandingComponent } from './landing/landing.component';
 const routes: Routes = [{
-  path: '',
+  path: 'home',
   component: DefaultComponent,
   canActivate: [AuthGuard],
   children: [{
-    path: '',
+    path: 'dashboard',
     component: DashboardComponent,
    }, {
-    path: 'posts',
+  path: 'posts',
     component: PostsComponent
   },{
     path: 'stocks',
@@ -108,6 +109,10 @@ const routes: Routes = [{
 },{
   path: 'login', component: UserComponent,
   children: [{ path: '', component: SignInComponent }]
+}
+,{
+  path: '', component: LandingComponent,
+ 
 }
 
 

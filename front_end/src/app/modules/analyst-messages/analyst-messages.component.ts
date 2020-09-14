@@ -23,6 +23,11 @@ export class AnalystMessagesComponent implements OnInit {
         }
   
       );
-  }
+  }  deleteMessage(id:String) {
+    this.userService.deleteMessage(id).subscribe(data => {
+        alert('Success');
+    });
+    window.location.reload()
+}
   
 }
