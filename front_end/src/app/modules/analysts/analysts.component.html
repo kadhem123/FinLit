@@ -1,5 +1,5 @@
 <div *ngIf="userDetails">
-    <table class="table" style="background-color: antiquewhite;" *ngIf="roleIsAdmin()">
+    <table class="table" style="background-color: antiquewhite;" *ngIf="!roleIsAnalyst()">
         <thead >
           <tr style="background-color:#4156B5;">
             <th scope="col">Id</th>

@@ -1,6 +1,7 @@
 
   <form #SendMessage="ngForm" style="text-align:center;" (ngSubmit)="SendMessage.valid && onSubmit(SendMessage)">
-   
+    <input type="hidden" #name="ngModel" [value]="userDetails._id" [(ngModel)]="userDetails._id" name="name" placeholder="Name"
+      >
      <input type="text" #email="ngModel" [(ngModel)]="userService.selectedMessage.email" name="email" placeholder="Email"
      required >
    <div *ngIf="SendMessage.submitted && email.errors">

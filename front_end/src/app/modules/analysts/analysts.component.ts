@@ -30,7 +30,10 @@ export class AnalystsComponent implements OnInit {
   roleIsAdmin(){
     return this.userDetails.role=="Admin"
   }
+  roleIsAnalyst(){
+    return this.userDetails.role=="Financial Analyst"
+  }
   deleteUser(id:String) {
-    this.router.navigate(['/message/',id]);  
+    this.router.navigate(['home/message/',id]);  
 }
 }

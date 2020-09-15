@@ -37,6 +37,7 @@ import { AnalystsComponent } from './modules/analysts/analysts.component';
 import { MessageComponent } from './modules/message/message.component';
 import { AnalystMessagesComponent } from './modules/analyst-messages/analyst-messages.component';
 import { LandingComponent } from './landing/landing.component';
+import { RespondComponent } from './modules/analyst-messages/respond/respond.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { LandingComponent } from './landing/landing.component';
     AnalystsComponent,
     MessageComponent,
     AnalystMessagesComponent,
-    LandingComponent
+    LandingComponent,
+    RespondComponent
   ],
   imports: [
     FormsModule,
