@@ -185,7 +185,7 @@ module.exports.addArticle = (req, res, next) => {
     article.body=req.body.body;
     article.role=req.body.role;
     article.id=req.body.id;
-
+    article.comments=req.body.comments;
 
     article.save((err, doc) => {
         if (!err)
