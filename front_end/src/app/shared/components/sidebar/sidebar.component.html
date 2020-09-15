@@ -21,7 +21,7 @@
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/home/stocks">
         <mat-icon>trending_up</mat-icon>
         Stocks</a>
-        <a mat-list-item routerLinkActive="list-item-active" routerLink="/home/Analysts">
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/home/Analysts" *ngIf="!roleIsAnalyst()">
             <mat-icon>people</mat-icon>
             Analysts</a>
         <a mat-list-item routerLinkActive="list-item-active" routerLink="/home/addarticle" *ngIf="roleIsAdmin()||roleIsAnalyst()">
@@ -40,7 +40,7 @@
             <mat-icon>message</mat-icon>
             Manage Messages
         </a>
-        <a mat-list-item routerLinkActive="list-item-active" routerLink="/home/mymessages" *ngIf="roleIsAnalyst()">
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/home/mymessages">
             <mat-icon>message</mat-icon>
 My Messages        </a>
        

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Message } from 'src/app/models/message.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-analyst-messages',
@@ -8,7 +9,7 @@ import { Message } from 'src/app/models/message.model';
   styleUrls: ['./analyst-messages.component.scss']
 })
 export class AnalystMessagesComponent implements OnInit {
-  constructor(private userService:AuthService) { }
+  constructor(private userService:AuthService,private router:Router) { }
   messages:Message[]
   userDetails;
   ngOnInit(): void {
@@ -28,6 +29,10 @@ export class AnalystMessagesComponent implements OnInit {
         alert('Success');
     });
     window.location.reload()
+}
+respond(id:String){
+  this.router.navigate(['home/mymessages/respond/',id]);
+
 }
   
 }

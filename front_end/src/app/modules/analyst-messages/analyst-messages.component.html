@@ -1,3 +1,4 @@
+<div *ngIf="userDetails&&messages">
 <h2>My Messages</h2>
 <div class="container">
     <div class="row">
@@ -16,9 +17,11 @@
 
 
       <p class="card-text">{{message.query}}</p>
-      <button class="btn btn-primary">Respond</button>
+      <button class="btn btn-primary" (click)="respond(message.name)" *ngIf="userDetails.role==='Financial Analyst'">Respond</button>
       <button class="btn btn-danger" (click)="deleteMessage(message._id)">Delete</button>
 
     </div></div>
   </div>
 </div>
+</div>
+<router-outlet></router-outlet>

@@ -28,6 +28,7 @@ import { AnalystsComponent } from './modules/analysts/analysts.component';
 import { MessageComponent } from './modules/message/message.component';
 import { AnalystMessagesComponent } from './modules/analyst-messages/analyst-messages.component';
 import { LandingComponent } from './landing/landing.component';
+import { RespondComponent } from './modules/analyst-messages/respond/respond.component';
 const routes: Routes = [{
   path: 'home',
   component: DefaultComponent,
@@ -73,7 +74,9 @@ const routes: Routes = [{
   },
   {
     path: 'mymessages',
-    component: AnalystMessagesComponent
+    component: AnalystMessagesComponent ,  children: [{ path: 'respond/:_id',
+    component: RespondComponent
+    }]
   },
   {
     path: 'article-details/:_id',
