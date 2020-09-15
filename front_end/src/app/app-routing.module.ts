@@ -73,18 +73,19 @@ const routes: Routes = [{
     component: ManageContactsComponent
   },
   {
-    path: 'mymessages',
-    component: AnalystMessagesComponent ,  children: [{ path: 'respond/:_id',
-    component: RespondComponent
-    }]
-  },
-  {
     path: 'article-details/:_id',
     component: ArticleDetailsComponent
     ,  children: [{ path: 'edit-comment/:_id',
     component: EditCommentComponent
     }]
   },
+  {
+    path: 'mymessages',
+    component: AnalystMessagesComponent ,  children: [{ path: 'respond/:_id',
+    component: RespondComponent
+    }]
+  },
+  
   {
     path: 'investing',
     component: InvestingComponent
