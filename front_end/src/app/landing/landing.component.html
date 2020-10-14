@@ -1,5 +1,6 @@
 <section style="width: 90%;margin:auto">
-    <nav class="navbar navbar-expand-lg navbar-light" style="padding:10px;background-color: transparent;">
+    <!---menu desktop-->
+    <nav class="navbar navbar-expand-lg navbar-light"  id="navDes" style="padding:10px;background-color: transparent;">
        
         <a class="navbar-brand" href="#"><img src="../../assets/img/Logo.png" alt="" width="70px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -30,7 +31,40 @@
 
         </div>
     </nav>
-    <div class="row" style="padding-top: 5%;padding-bottom:12%">
+        <!---menu mobile-->
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: white;" id="navMob">
+        <a class="navbar-brand" href="#"><img src="../../assets/img/Logo.png" alt="" width="70px"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto" id="menu">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Mission<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Team<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/login">Login<span class="sr-only">(current)</span></a>
+                </li>
+
+            </ul>
+
+          </div>
+        </nav>
+        <br><br>
+        <br>
+    <!---first section-->
+
+    <div class="row" style="padding-top: 1%;padding-bottom:12%">
         <div class="col-lg-5" style="padding-top: 10%;">
             <h1 style="font-size:45px">Start <font style="color:red">your journey</font> to Financial <font
                     style="color:#fecf3c">freedom</font>
@@ -46,6 +80,8 @@
                 alt=""></div>
 
     </div>
+        <!---section-->
+
     <div style="text-align:center;margin-bottom:100px">
         <h1 style="font-size: 40px;">Services</h1>
         <h3>FinLit makes it easier for you to ...</h3>
@@ -86,6 +122,8 @@
 
         </div>
     </div>
+            <!---section-->
+
     <section id="last">
         <div class="row">
             <div class="col-lg-7"><img width="92%" src="../../assets/images/undraw_success_factors_fay0.svg" alt=""></div>
@@ -97,6 +135,8 @@
         </div>
 
     </section>
+            <!---section-->
+
     <section id="last">
         <div class="row">
             <div class="col-lg-5" style="padding-top: 10%;"><h1 style="font-size:45px">New to competitive hiring world?
@@ -111,6 +151,8 @@
     </section>
     
 </section>
+        <!---section-->
+
 <section id="last" style="background-color:#f1f1f1;text-align:center;padding:10px">
     
     <h1 style="font-size: 40px;">Our mission</h1>
@@ -131,6 +173,8 @@
     </div>
 
 </section>
+        <!---section footer-->
+
 <section style="text-align:center;padding-top:20px">
     <div class="row" style="text-align:center ;">
 <div class="col"></div><div class="col-8">
@@ -144,3 +188,4 @@
 <h4 style="color:grey">Copyright ©2020 All rights reserved</h4>
     
 </section>
+
