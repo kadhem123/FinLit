@@ -1,6 +1,8 @@
+<div *ngIf="userDetails && stockDetails">
     
     <div style="text-align: center;" >
         <h1 style="font-size: 40px;">{{stockDetails.name}}</h1>
        
         <div  [innerHTML]="stockDetails.description"></div>    
         </div>
+    </div>

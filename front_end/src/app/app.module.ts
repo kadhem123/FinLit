@@ -43,6 +43,7 @@ import { EditStockComponent } from './modules/edit-stock/edit-stock.component';
 import { StickyNavModule } from 'ng2-sticky-nav';
 import { EditorModule } from "@tinymce/tinymce-angular";
 import { CommonModule } from '@angular/common';
+import { StockDetailsComponent } from './modules/stock-details/stock-details.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { CommonModule } from '@angular/common';
     RespondComponent,
     AddStockComponent,
     EditStockComponent,
+    StockDetailsComponent
   ],
   imports: [
     FormsModule,
