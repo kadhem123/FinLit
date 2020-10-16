@@ -6,7 +6,9 @@
 
     <div class="card-body">
       <h3 class="card-title" style="color:#4156b5">{{stock.name}}</h3>
-      <p class="card-text">{{stock.description}}</p>
+          <div  [innerHTML]="stock.description.substr(0,500)"></div>    
+          <a href="#" class="btn btn-primary" style="background-color:#4156b5;" routerLink="/home/stock/{{stock._id}}">Read More</a>
+<br>
       <button class="btn btn-danger" (click)="deleteStock(stock._id)" *ngIf="roleIsAdmin()"> Delete</button>
       <button class="btn btn-primary" (click)="editStock(stock._id)" *ngIf="roleIsAdmin()"> Edit</button>
 

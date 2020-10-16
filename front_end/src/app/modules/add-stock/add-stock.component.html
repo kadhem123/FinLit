@@ -14,14 +14,10 @@
      
       <label for="description">Description</label>
   <br>
-      <input type="text" style="height: 100px;" #description="ngModel" [(ngModel)]="userService.selectedStock.description" name="description"
+      <editor #description="ngModel" [(ngModel)]="userService.selectedStock.description" name="description"
         placeholder="Description" minlength="5" required
-        [ngClass]="{'invalid-textbox' :AddStockForm.submitted && !body.valid }">
-      <div *ngIf="AddStockForm.submitted && body.errors">
-        <label *ngIf="body.errors.required" class="validation-message">This field is required.</label>
-        <label *ngIf="body.errors.minlength" class="validation-message">Enter atleast 20 characters.</label>
-      </div>
-     
+        >
+      </editor>
     
       <input type="submit" value="Add Stock">
     </form>
