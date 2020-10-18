@@ -1,22 +1,48 @@
-<h2 style="font-size:medium" class="Inactive undelineHover" routerLink="/login" routerLinkActive="active">Sign In</h2>
-&nbsp;<h2 style="font-size:medium" class="Inactive undelineHover" routerLink="/signup" routerLinkActive="active"> Sign Up</h2>
-<div>
-  <img src="../../../assets/images/Users.png" alt="User Icon" id="icon">
-</div>
-<form #signInForm="ngForm" (ngSubmit)="signInForm.valid && onSubmit(signInForm)">
-  <input type="text" name="username" required placeholder="Email" #username="ngModel"
-    [(ngModel)]="model.username">
- 
-  <input type="password" #password="ngModel" [(ngModel)]="model.password" name="password" placeholder="Password"
-    minlength="4" required [ngClass]="{'invalid-textbox' :signInForm.submitted && !password.valid }">
-  <div *ngIf="signInForm.submitted && password.errors?.minlength">
-    <label class="validation-message">Minimum 4 characters.</label>
+<div class="container">
+  <div class="forms-container">
+    <div class="signin-signup">
+      <form #signInForm="ngForm" (ngSubmit)="signInForm.valid && onSubmit(signInForm)" class="sign-in-form">
+        <h2 class="title">Sign in</h2>
+        <div class="input-field">
+          <i class="fa fa-user"></i>
+          <input type="text"name="username" required placeholder="Email" #username="ngModel"
+          [(ngModel)]="model.username"/>
+        </div>
+        <div class="input-field">
+          <i class="fa fa-lock"></i>
+          <input type="password" type="password" #password="ngModel" [(ngModel)]="model.password" name="password" placeholder="Password"
+          minlength="4" required [ngClass]="{'invalid-textbox' :signInForm.submitted && !password.valid }" />
+          <div *ngIf="signInForm.submitted && password.errors?.minlength">
+            <label class="validation-message">Minimum 4 characters.</label>
+          </div>
+        </div>
+        <input type="submit" value="Login" class="btn solid" />
+        <div class="alert" *ngIf="serverErrorMessages">
+          {{serverErrorMessages}}
+        </div>
+      </form>
+     
+    </div>
   </div>
-  <input type="submit" value="Sign In">
-</form>
 
-<p>Didnt have an account? <a routerLink="/signup">Register</a></p>
-
-<div class="alert" *ngIf="serverErrorMessages">
-  {{serverErrorMessages}}
+  <div class="panels-container">
+    <div class="panel left-panel">
+      <div class="content">
+        <h3>New here ?</h3>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
+          ex ratione. Aliquid!
+        </p>
+        <a routerLink="/signup"><button class="btn transparent" id="sign-up-btn">
+          Sign up
+        </button></a>
+      </div>
+      <img src="../../../assets/images/log.svg" class="image" alt="" />
+    </div>
+   
+  </div>
 </div>
+
+
+
+
