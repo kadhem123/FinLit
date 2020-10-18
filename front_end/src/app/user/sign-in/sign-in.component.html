@@ -12,11 +12,13 @@
           <i class="fa fa-lock"></i>
           <input type="password" type="password" #password="ngModel" [(ngModel)]="model.password" name="password" placeholder="Password"
           minlength="4" required [ngClass]="{'invalid-textbox' :signInForm.submitted && !password.valid }" />
-          <div *ngIf="signInForm.submitted && password.errors?.minlength">
-            <label class="validation-message">Minimum 4 characters.</label>
-          </div>
+         
         </div>
         <input type="submit" value="Login" class="btn solid" />
+        
+        <div *ngIf="signInForm.submitted && password.errors?.minlength">
+          <label class="validation-message">Minimum 4 characters.</label>
+        </div>
         <div class="alert" *ngIf="serverErrorMessages">
           {{serverErrorMessages}}
         </div>
